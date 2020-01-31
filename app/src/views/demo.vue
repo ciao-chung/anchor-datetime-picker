@@ -19,7 +19,23 @@ export default {
         {
           title: 'datetime',
           component: () => import('views/demo/datetime.vue'),
-        }
+        },
+        {
+          title: 'date',
+          component: () => import('views/demo/date.vue'),
+        },
+        {
+          title: 'time',
+          component: () => import('views/demo/time.vue'),
+        },
+        {
+          title: 'Text field slot',
+          component: () => import('views/demo/textFieldSlot.vue'),
+        },
+        {
+          title: 'Tab icon slot',
+          component: () => import('views/demo/tabIconSlot.vue'),
+        },
       ]
     },
   },

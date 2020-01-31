@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="subtitle-1 mb-2">data: {{value}}</div>
-    <v-datetime-picker v-model="value"></v-datetime-picker>
+    <v-datetime-picker type="time" v-model="value"></v-datetime-picker>
   </div>
 </template>
 
@@ -10,11 +10,8 @@ import blockMixin from 'views/demo/blockMixin.js'
 export default {
   mixins: [blockMixin],
   data: () => ({
-    value: null,
+    value: '00:00:00',
   }),
-  created() {
-    this.value = this.$moment().format('YYYY-MM-DD HH:mm:ss')
-  },
 }
 </script>
 

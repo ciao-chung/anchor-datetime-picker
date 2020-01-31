@@ -1,49 +1,50 @@
 <template>
-  <v-card anchor-datetime-picker-container :style="containerStyle">
-    <v-card-text class="px-0 py-0">
-      <v-tabs fixed-tabs v-model="focusTab">
-        <v-tab v-if="hasDate">
-          <slot name="date-icon">
-            <v-icon>mdi-calendar</v-icon>
-          </slot>
-        </v-tab>
-        
-        <v-tab v-if="hasTime">
-          <slot name="time-icon">
-            <v-icon>mdi-clock</v-icon>
-          </slot>
-        </v-tab>
+  <div anchor-datetime-picker-root>
+    <v-menu
+      :close-on-content-click="false"
+      :transition="transition"
+      offset-y
+      min-width="290px"
+    >
+      <template v-slot:activator="{ on }">
+        <slot name="text-field"
+          :data="data"
+          :text-field-props="textFieldProps"
+        >
+          <v-text-field
+            v-on="on"
+            v-model="data"
+            v-bind="textFieldProps"
+            dense
+            outlined
+            prepend-inner-icon="fa fa-clock"
+            readonly
+            :clearable="!disabled"
+          ></v-text-field>
+        </slot>
+      </template>
 
-        <v-tabs-items v-model="focusTab">
-          <!--date-->
-          <v-tab-item v-if="hasDate">
-            <v-date-picker
-              full-width
-              v-model="date"
-              v-bind="datePickerProps"
-              @input="focusTimePicker"
-              :locale="locale"
-            ></v-date-picker>
-          </v-tab-item>
+      <datetimePicker
+        v-bind="$props"
+        v-model="data">
 
-          <!--time-->
-          <v-tab-item v-if="hasTime">
-            <v-time-picker
-              full-width
-              use-seconds
-              v-model="time"
-              v-bind="timePickerProps"
-              :locale="locale"
-            ></v-time-picker>
-          </v-tab-item>
-        </v-tabs-items>
-      </v-tabs>
-    </v-card-text>
-  </v-card>
+        <!--date icon-->
+        <template v-slot:date-icon>
+          <slot name="date-icon"></slot>
+        </template>
+
+        <!--time icon-->
+        <template v-slot:time-icon>
+          <slot name="time-icon"></slot>
+        </template>
+
+      </datetimePicker>
+
+    </v-menu>
+  </div>
 </template>
 
 <script lang="babel" type="text/babel">
-import moment from 'moment'
 export default {
   props: {
     width: {
@@ -78,66 +79,33 @@ export default {
       type: Object,
       default: () => {},
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    transition: {
+      type: String,
+      default: 'scroll-y-transition',
+    },
   },
   data: () => ({
-    focusTab: 0,
-    date: null,
-    time: null,
+    data: null,
   }),
-  methods: {
-    focusTimePicker() {
-      if(!this.isDatetime) return
-      this.focusTab = 1
-    },
-  },
-  computed: {
-    containerStyle() {
-      return {
-        width: `${this.width}`,
-      }
-    },
-    locale() {
-      return this.$vDatetimePicker.locale
-    },
-    isDatetime() {
-      if(this.type == 'datetime') return true
-      return false
-    },
-    hasDate() {
-      if(this.type == 'time') return false
-      return true
-    },
-    hasTime() {
-      if(this.type == 'date') return false
-      return true
-    },
-    formattedDate() {
-      if(!this.date) return null
-      return moment(this.date).format(this.dateFormat)
-    },
-    formattedTime() {
-      if(!this.time) return null
-      const today = moment().format('YYYY-MM-DD')
-      return moment(`${today} ${this.time}`).format(this.timeFormat)
-    },
-    result() {
-      if(this.isDatetime) {
-        if(this.formattedDate == null && this.formattedTime == null) return null
-        if(this.formattedTime == null) return `${this.formattedDate} 00:00:00`
-        return `${this.formattedDate} ${this.formattedTime}`
-      }
-      if(this.hasDate) return this.formattedDate
-      if(this.hasTime) return this.formattedTime
-      return null
-    },
+  created() {
+    this.data = this.value
   },
   watch: {
-    result() {
-      if(this.value === this.result) return
-      this.$emit('change', this.result)
-      this.$emit('input', this.result)
+    value() {
+      this.data = this.value
     },
-  }
+    data() {
+      if(this.data === this.value) return
+      this.$emit('input', this.data)
+    },
+  },
+  components: {
+    datetimePicker: () => import('./datetimePicker.vue')
+  },
 }
 </script>
 

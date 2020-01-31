@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="subtitle-1 mb-2">data: {{value}}</div>
-    <v-datetime-picker v-model="value"></v-datetime-picker>
+    <v-datetime-picker type="date" v-model="value"></v-datetime-picker>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     value: null,
   }),
   created() {
-    this.value = this.$moment().format('YYYY-MM-DD HH:mm:ss')
+    this.value = this.$moment().format('YYYY-MM-DD')
   },
 }
 </script>

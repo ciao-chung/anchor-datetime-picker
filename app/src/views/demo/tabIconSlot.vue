@@ -1,7 +1,18 @@
 <template>
   <div>
     <div class="subtitle-1 mb-2">data: {{value}}</div>
-    <v-datetime-picker v-model="value"></v-datetime-picker>
+
+    <v-datetime-picker
+      type="datetime"
+      v-model="value">
+      <template v-slot:date-icon>
+        Date
+      </template>
+
+      <template v-slot:time-icon>
+        Time
+      </template>
+    </v-datetime-picker>
   </div>
 </template>
 
@@ -12,9 +23,6 @@ export default {
   data: () => ({
     value: null,
   }),
-  created() {
-    this.value = this.$moment().format('YYYY-MM-DD HH:mm:ss')
-  },
 }
 </script>
 
