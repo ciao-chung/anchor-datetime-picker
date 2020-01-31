@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/anchor-datetime-picker/precache-manifest.b5a2c74eb914064367ab523341257fe8.js"
+  "/anchor-datetime-picker/precache-manifest.4f463cc8013ac20182a261df2e463370.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "anchor-datetime-picker"});
