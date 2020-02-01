@@ -10,6 +10,8 @@
     <v-divider></v-divider>
 
     <v-list-item v-for="page in computedPages"
+      exact
+      exact-active-class="router-link-exact-active"
       :key="page.name"
       :to="page.route">
       <v-list-item-content>
