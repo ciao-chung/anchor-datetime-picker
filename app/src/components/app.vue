@@ -2,6 +2,7 @@
   <div anchor-datetime-picker-root>
     <v-menu
       v-if="!inline"
+      v-model="showMenu"
       :close-on-content-click="false"
       :transition="transition"
       offset-y
@@ -27,6 +28,7 @@
       </template>
 
       <datetimePicker
+        @finish="finish"
         v-bind="$props"
         v-model="data">
 
@@ -117,10 +119,16 @@ export default {
     },
   },
   data: () => ({
+    showMenu: false,
     data: null,
   }),
   created() {
     this.data = this.value
+  },
+  methods: {
+    finish() {
+      this.showMenu = false
+    },
   },
   computed: {
     textFieldClearable() {

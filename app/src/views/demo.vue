@@ -33,7 +33,7 @@ export default {
           component: () => import('views/demo/time.vue'),
         },
         {
-          title: 'Inline',
+          title: 'inline',
           component: () => import('views/demo/inline.vue'),
           grid: {
             xl: 12,
@@ -42,24 +42,33 @@ export default {
           },
         },
         {
-          title: 'Text field slot',
+          title: 'text-field-slot',
           component: () => import('views/demo/textFieldSlot.vue'),
         },
         {
-          title: 'Tab icon slot',
+          title: 'tab-icon-slot',
           component: () => import('views/demo/tabIconSlot.vue'),
         },
         {
-          title: 'Disabled',
+          title: 'disabled',
           component: () => import('views/demo/disabled.vue'),
         },
         {
-          title: 'Readonly',
+          title: 'readonly',
           component: () => import('views/demo/readonly.vue'),
         },
         {
-          title: 'Transition',
+          title: 'transition',
           component: () => import('views/demo/transition.vue'),
+          grid: {
+            xl: 12,
+            lg: 12,
+            md: 12,
+          },
+        },
+        {
+          title: 'locale',
+          component: () => import('views/demo/locale.vue'),
           grid: {
             xl: 12,
             lg: 12,

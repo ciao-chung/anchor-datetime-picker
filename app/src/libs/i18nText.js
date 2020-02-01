@@ -31,8 +31,21 @@ export default {
     'doc.slot.description.date-icon': 'datetime picker的日期tab icon',
     'doc.slot.description.time-icon': 'datetime picker的時間tab icon',
 
+    // demo
+    'demo_block.title.datetime': 'Datetime',
+    'demo_block.title.date': 'Date',
+    'demo_block.title.time': 'Time',
+    'demo_block.title.inline': 'Inline',
+    'demo_block.title.text-field-slot': 'Vuetify v-text-field slot',
+    'demo_block.title.tab-icon-slot': 'Tab icon slot',
+    'demo_block.title.disabled': 'Disabled',
+    'demo_block.title.readonly': 'Readonly',
+    'demo_block.title.transition': 'Transition',
+    'demo_block.title.locale': '語系設定',
+
     // help
     'demo.help.transition': '<strong>transition</strong>為v-menu元件的屬性, {{link}}',
+    'demo.help.locale': '使用<strong>$vDatetimePicker</strong> instance method設定, <strong>locale</strong>為v-date-picker元件的屬性, {{link}}',
 
     // etc
     'installation': '安裝',
@@ -72,8 +85,21 @@ export default {
     'doc.slot.description.date-icon': 'date tab icon of datetime picker',
     'doc.slot.description.time-icon': 'time tab icon of datetime picker',
 
+    // demo
+    'demo_block.title.datetime': 'Datetime',
+    'demo_block.title.date': 'Date',
+    'demo_block.title.time': 'Time',
+    'demo_block.title.inline': 'Inline',
+    'demo_block.title.text-field-slot': 'Vuetify v-text-field slot',
+    'demo_block.title.tab-icon-slot': 'Tab icon slot',
+    'demo_block.title.disabled': 'Disabled',
+    'demo_block.title.readonly': 'Readonly',
+    'demo_block.title.transition': 'Transition',
+    'demo_block.title.locale': 'Locale',
+
     // help
-    'demo.help.transition': '<strong>transition</strong> is property of v-menu component {{link}}',
+    'demo.help.transition': '<strong>transition</strong> is property of v-menu component, {{link}}',
+    'demo.help.locale': 'use <strong>$vDatetimePicker</strong> instance methods, </strong><strong>locale</strong> is property of v-date-picker component, {{link}}',
 
     // etc
     'installation': 'Installation',

@@ -1,6 +1,6 @@
 {
   "name": "anchor-datetime-picker",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Vuetify datetime picker",
   "main": "dist/anchor-datetime-picker.common.js",
   "author": "Ciao Chung <ciao0958@gmail.com>",

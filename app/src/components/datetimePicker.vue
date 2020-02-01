@@ -2,25 +2,26 @@
   <v-card anchor-datetime-picker-container :style="containerStyle">
     <v-card-text class="px-0 py-0">
       <v-tabs fixed-tabs v-model="focusTab">
-        <v-tab v-if="isDate">
+        <v-tab v-if="hasDate">
           <slot name="date-icon">
-            <v-icon>mdi-calendar</v-icon>
+            <v-icon>fa fa-calendar</v-icon>
           </slot>
         </v-tab>
         
-        <v-tab v-if="isTime">
+        <v-tab v-if="hasTime">
           <slot name="time-icon">
-            <v-icon>mdi-clock</v-icon>
+            <v-icon>fa fa-clock</v-icon>
           </slot>
         </v-tab>
 
         <v-tabs-items v-model="focusTab">
           <!--date-->
-          <v-tab-item v-if="isDate">
+          <v-tab-item v-if="hasDate">
             <v-date-picker
               full-width
               v-model="date"
               v-bind="datePickerProps"
+              @click:date="onDateClick"
               @input="focusTimePicker"
               :locale="locale"
               :disabled="disabled"
@@ -29,13 +30,15 @@
           </v-tab-item>
 
           <!--time-->
-          <v-tab-item v-if="isTime">
+          <v-tab-item v-if="hasTime">
             <v-time-picker
               full-width
               use-seconds
+              @click:second="onSecondClick"
               v-model="time"
               v-bind="timePickerProps"
               :locale="locale"
+              :readonly="readonly"
               :disabled="disabled"
             ></v-time-picker>
           </v-tab-item>
@@ -130,6 +133,12 @@ export default {
       if(!this.isDatetime) return
       this.focusTab = 1
     },
+    onDateClick() {
+      if(this.isDate) this.$emit('finish')
+    },
+    onSecondClick() {
+      this.$emit('finish')
+    },
   },
   computed: {
     containerStyle() {
@@ -141,14 +150,19 @@ export default {
       return this.$vDatetimePicker.locale
     },
     isDatetime() {
-      if(this.type == 'datetime') return true
-      return false
+      return this.type == 'datetime'
     },
     isDate() {
+      return this.type == 'date'
+    },
+    isTime() {
+      return this.type == 'time'
+    },
+    hasDate() {
       if(this.type == 'time') return false
       return true
     },
-    isTime() {
+    hasTime() {
       if(this.type == 'date') return false
       return true
     },

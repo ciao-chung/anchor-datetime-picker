@@ -2,7 +2,7 @@
   <v-col :xl="grid.xl" :lg="grid.lg" :md="grid.md" :sm="grid.sm" :xs="grid.xs" cols="12">
     <v-card>
       <v-card-title>
-        {{block.title| i18n}}
+        {{'demo_block.title.'+block.title| i18n}}
       </v-card-title>
 
       <v-card-text>
