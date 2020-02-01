@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "86c8b0ff9db2fb910a79",
+    "revision": "46b4139e40c298b15cec",
     "url": "/anchor-datetime-picker/anchor-datetime-picker.js"
   },
   {
@@ -8,24 +8,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/anchor-datetime-picker/anchor/logo.png"
   },
   {
-    "revision": "3a531597079fdb14ec0a",
-    "url": "/anchor-datetime-picker/chunk-344fe3a0.anchor-datetime-picker.js"
+    "revision": "dbaea315ddfbd40dd192",
+    "url": "/anchor-datetime-picker/chunk-0d29132a.anchor-datetime-picker.js"
   },
   {
-    "revision": "7077af89c3e3794b5a57",
-    "url": "/anchor-datetime-picker/chunk-6739b730.anchor-datetime-picker.js"
+    "revision": "980ee6096ab48f1d73a7",
+    "url": "/anchor-datetime-picker/chunk-2c6571e4.anchor-datetime-picker.js"
   },
   {
-    "revision": "eb7bda499628ec3d013e",
+    "revision": "c42cd5ff7c7237612680",
+    "url": "/anchor-datetime-picker/chunk-2d2218e2.anchor-datetime-picker.js"
+  },
+  {
+    "revision": "ecf54ef511b726fa34cb",
+    "url": "/anchor-datetime-picker/chunk-31e5142e.anchor-datetime-picker.js"
+  },
+  {
+    "revision": "1194c1b36f2ee1172b71",
     "url": "/anchor-datetime-picker/chunk-782ec608.anchor-datetime-picker.js"
   },
   {
-    "revision": "7e51124eb077275e5621",
+    "revision": "509bf56337b43d412980",
     "url": "/anchor-datetime-picker/chunk-78574ad2.anchor-datetime-picker.js"
-  },
-  {
-    "revision": "4f37e9eb340fe77cde53",
-    "url": "/anchor-datetime-picker/chunk-8b849b06.anchor-datetime-picker.js"
   },
   {
     "revision": "36d61c82946c2e1bfe2f",
@@ -60,56 +64,36 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/anchor-datetime-picker/chunk-9682f6c8.anchor-datetime-picker.js"
   },
   {
-    "revision": "fab6e7454ed2dc4f238e",
-    "url": "/anchor-datetime-picker/chunk-b814df82.anchor-datetime-picker.js"
+    "revision": "f1045a931ab66eee2ee1",
+    "url": "/anchor-datetime-picker/chunk-d462a8e0.anchor-datetime-picker.js"
   },
   {
-    "revision": "a89ce492fdc7d6b61f5d",
-    "url": "/anchor-datetime-picker/chunk-cb47f77c.anchor-datetime-picker.js"
+    "revision": "e75d6aedf58a4f99e992",
+    "url": "/anchor-datetime-picker/chunk-d4752a10.anchor-datetime-picker.js"
   },
   {
-    "revision": "6bd3d9033170b49ee25a",
-    "url": "/anchor-datetime-picker/chunk-fcdaee44.anchor-datetime-picker.js"
-  },
-  {
-    "revision": "dba522f860ae04187147",
-    "url": "/anchor-datetime-picker/chunk-ff189314.anchor-datetime-picker.js"
-  },
-  {
-    "revision": "9c6ff7e1a54dcd847adf",
+    "revision": "fcf2696b6b6dec458f46",
     "url": "/anchor-datetime-picker/chunk-vendors.anchor-datetime-picker.js"
   },
   {
-    "revision": "86c8b0ff9db2fb910a79",
+    "revision": "46b4139e40c298b15cec",
     "url": "/anchor-datetime-picker/css/app.4b2a5efd.css"
   },
   {
-    "revision": "3a531597079fdb14ec0a",
-    "url": "/anchor-datetime-picker/css/chunk-344fe3a0.a4c56ca7.css"
+    "revision": "dbaea315ddfbd40dd192",
+    "url": "/anchor-datetime-picker/css/chunk-0d29132a.67178b5a.css"
   },
   {
-    "revision": "7077af89c3e3794b5a57",
-    "url": "/anchor-datetime-picker/css/chunk-6739b730.a4c56ca7.css"
+    "revision": "f1045a931ab66eee2ee1",
+    "url": "/anchor-datetime-picker/css/chunk-d462a8e0.7a30e4c8.css"
   },
   {
-    "revision": "4f37e9eb340fe77cde53",
-    "url": "/anchor-datetime-picker/css/chunk-8b849b06.4ca4520d.css"
+    "revision": "e75d6aedf58a4f99e992",
+    "url": "/anchor-datetime-picker/css/chunk-d4752a10.7a30e4c8.css"
   },
   {
-    "revision": "fab6e7454ed2dc4f238e",
-    "url": "/anchor-datetime-picker/css/chunk-b814df82.1f11c1d6.css"
-  },
-  {
-    "revision": "6bd3d9033170b49ee25a",
-    "url": "/anchor-datetime-picker/css/chunk-fcdaee44.bacb7505.css"
-  },
-  {
-    "revision": "dba522f860ae04187147",
-    "url": "/anchor-datetime-picker/css/chunk-ff189314.bacb7505.css"
-  },
-  {
-    "revision": "9c6ff7e1a54dcd847adf",
-    "url": "/anchor-datetime-picker/css/chunk-vendors.6bfca274.css"
+    "revision": "fcf2696b6b6dec458f46",
+    "url": "/anchor-datetime-picker/css/chunk-vendors.7a934317.css"
   },
   {
     "revision": "c7c1f3936f2459363726d385ae4d22f8",
@@ -224,7 +208,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/anchor-datetime-picker/img/icons/mstile-150x150.png"
   },
   {
-    "revision": "2d0cb87e0fada64896e2d11a50d23507",
+    "revision": "c897b9410c25b1a2659072e4acb01348",
     "url": "/anchor-datetime-picker/index.html"
   },
   {

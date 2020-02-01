@@ -64,6 +64,7 @@
 </template>
 
 <script lang="babel" type="text/babel">
+import datetimePicker from './datetimePicker'
 export default {
   props: {
     width: {
@@ -138,7 +139,7 @@ export default {
     },
   },
   components: {
-    datetimePicker: () => import('./datetimePicker.vue')
+    datetimePicker,
   },
 }
 </script>
