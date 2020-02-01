@@ -23,6 +23,14 @@ export default {
     'doc.prop.description.datePickerProps': 'date picker元件的props設定, {{link}}',
     'doc.prop.description.timePickerProps': 'time picker元件的props設定, {{link}}',
 
+    'doc.slot.name': '名稱',
+    'doc.slot.description': '說明',
+    'doc.slot.description.text-field': 'Text field元件',
+    'doc.slot.text-field.props.data': 'data: String/null 綁定的值(時間)',
+    'doc.slot.text-field.props.text-field-props': 'text-field-props: Object, prop.textFieldProps物件',
+    'doc.slot.description.date-icon': 'datetime picker的日期tab icon',
+    'doc.slot.description.time-icon': 'datetime picker的時間tab icon',
+
     // help
     'demo.help.transition': '<strong>transition</strong>為v-menu元件的屬性, {{link}}',
 
@@ -55,6 +63,14 @@ export default {
     'doc.prop.description.textFieldProps': 'props of text field component, {{link}}',
     'doc.prop.description.datePickerProps': 'props of date picker component, {{link}}',
     'doc.prop.description.timePickerProps': 'props of time picker component, {{link}}',
+
+    'doc.slot.name': 'Name',
+    'doc.slot.description': 'Description',
+    'doc.slot.description.text-field': 'Text field component',
+    'doc.slot.text-field.props.data': 'data: String/null value which is bind',
+    'doc.slot.text-field.props.text-field-props': 'text-field-props: Object, prop.textFieldProps object',
+    'doc.slot.description.date-icon': 'date tab icon of datetime picker',
+    'doc.slot.description.time-icon': 'time tab icon of datetime picker',
 
     // help
     'demo.help.transition': '<strong>transition</strong> is property of v-menu component {{link}}',

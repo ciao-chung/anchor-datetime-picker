@@ -6,7 +6,7 @@
   "projectName": "Anchor Datetime Picker",
   "scripts": {
     "serve": "vue-cli-service serve --port=8888",
-    "build": "vue-cli-service build --target lib --name anchor-datetime-picker 'src/components/app.vue'; rm -rf ../prod/dist; cp -r dist ../prod",
+    "build": "vue-cli-service build --target lib --name anchor-datetime-picker 'src/components/app.vue'; rm -rf ../prod/dist; cp -r dist ../prod; cp ../README.md ../prod",
     "docs": "vue-cli-service build --dest docs; rm -rf ../docs; mv docs ../docs",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
