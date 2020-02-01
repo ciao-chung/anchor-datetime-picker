@@ -62,7 +62,6 @@ export default {
 }
 </script>
 
-<style src="flag-icon-css/css/flag-icon.css"></style>
 <style lang="sass" type="text/sass">
 @import '~vue-snotify/styles/material'
 div.v-application

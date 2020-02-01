@@ -16,7 +16,6 @@
     "@fortawesome/fontawesome-free": "^5.12.0",
     "core-js": "^3.4.4",
     "crosstab": "^0.2.12",
-    "flag-icon-css": "^3.4.5",
     "jquery": "^3.4.1",
     "lodash.clonedeep": "^4.5.0",
     "mobile-detect": "^1.4.4",

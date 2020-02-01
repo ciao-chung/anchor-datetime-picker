@@ -10,6 +10,8 @@ import helper from 'libs/helper.js'
 import setupTextAndI18n from 'mainMixins/setupTextAndI18n.js'
 import crosstab from 'crosstab'
 import VueClipboard from 'vue-clipboard2'
+import _cloneDeep from 'lodash.clonedeep'
+window._cloneDeep = _cloneDeep
 import moment from 'moment'
 Vue.prototype.$moment = moment
 Vue.use(VueClipboard)

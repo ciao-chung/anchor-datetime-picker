@@ -1,8 +1,7 @@
 <template>
   <v-list-item @click="onClick">
     <v-list-item-title>
-      <v-icon v-if="flag" small>{{icon}}</v-icon>
-      <span class="pl-2 caption">{{item.label}}</span>
+      <span class="caption">{{item.label}}</span>
     </v-list-item-title>
   </v-list-item>
 </template>
@@ -13,22 +12,10 @@ export default {
     item: {
       type: Object,
     },
-    flag: {
-      type: Boolean,
-      default: true,
-    },
   },
   methods: {
     onClick() {
       this.$emit('click', this.item.code)
-    },
-  },
-  computed: {
-    icon() {
-      return `flag-icon flag-icon-${this.countryCode}`
-    },
-    countryCode() {
-      return helper.getCountryCodeFromLanguageCode(this.item.code, true)
     },
   },
 }

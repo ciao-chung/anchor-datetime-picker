@@ -2,15 +2,13 @@
   <v-menu offset-y transition="slide-x-reverse-transition">
     <template v-slot:activator="{ on }">
       <v-btn outlined v-on="on" small>
-        <v-icon v-if="flag" small>{{flagIcon}}</v-icon>
-        <span class="pl-2 caption">{{label}}</span>
+        <span class="caption">{{label}}</span>
       </v-btn>
     </template>
 
     <v-list>
       <languageItem @click="click"
         v-for="language in languages"
-        :flag="flag"
         :key="language.code"
         :item="language">
       </languageItem>
@@ -19,49 +17,32 @@
 </template>
 
 <script lang="babel" type="text/babel">
-import languageItem from './languageItem.vue'
-import _cloneDeep from 'lodash.clonedeep'
+import languageItem from './languageItem'
 export default {
-  props: {
-    flag: {
-      type: Boolean,
-      default: true,
-    },
-  },
   methods: {
     click(code) {
-      if(this.clientLanguage == code) return
+      if(this.$route.params.language == code) return
+
       let route = {
-        name: this.$route.name || 'home',
-        params: {
-          ..._cloneDeep(this.$route.params),
-          [this.localeKey]: code,
-        },
+        name: this.$route.name,
+        params: _cloneDeep(this.$route.params),
         query: _cloneDeep(this.$route.query),
         hash: this.$route.hash,
       }
+      route.params.language = code
       this.$router.push(route)
     }
   },
   computed: {
-    clientLanguage() {
-      return this.$route.params[this.localeKey]
-    },
-    flagIcon() {
-      return `flag-icon flag-icon-${this.countryCode}`
-    },
-    countryCode() {
-      return helper.getCountryCodeFromLanguageCode(this.storeLanguage, true)
-    },
     label() {
-      if(!this.storeLanguage) return null
-      if(!this.languagesObject[this.storeLanguage]) return null
-      return this.languagesObject[this.storeLanguage].label
+      if(!this.language) return null
+      if(!this.languagesObject[this.language]) return null
+      return this.languagesObject[this.language].label
     },
-    localeKey() {
-      return this.$store.getters['locale/key']
+    locale() {
+      return this.$store.getters['locale/locale']
     },
-    storeLanguage() {
+    language() {
       return this.$store.getters['locale/language']
     },
     languages() {

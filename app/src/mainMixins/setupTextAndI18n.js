@@ -1,25 +1,38 @@
-import i18n from 'libs/i18n.js'
-import _cloneDeep from 'lodash.clonedeep'
+import i18nLibrary from 'libs/i18n.js'
+import i18nText from 'libs/i18nText'
 export default {
+  data() {
+    return {
+      i18nLibrary: null,
+    }
+  },
   methods: {
     async loadText() {
-      this.setupClientLanguage()
+      window.i18nLibrary = i18nLibrary
 
-      i18n.launch({
-        fallback: this.fallback,
-        languages: this.languages,
-      }, () => this.clientLanguage)
-    },
-    setupClientLanguage() {
-      if(this.clientLanguage) {
-        return
+      window.i18nLibrary.init('zh-TW', this.languages)
+      const availableLanguage = window.i18nLibrary.getAvailableLanguage(this.routeLanguage)
+      this.$store.dispatch('locale/setLanguage', availableLanguage)
+      this.$nextTick(() => {
+        this.redirectInvalidLanguage()
+      })
+
+      try {
+        window.i18nLibrary.launch({
+          text: i18nText,
+        }, () => this.clientLanguage)
+      } catch (error) {
+        console.error(error)
+        console.warn('init text fail')
       }
-
+    },
+    redirectInvalidLanguage() {
+      if(this.clientLanguage == this.routeLanguage) return
       let route = {
         name: this.$route.name || 'home',
         params: {
           ..._cloneDeep(this.$route.params),
-          [this.localeKey]: this.clientLanguage || this.fallback,
+          language: this.clientLanguage,
         },
         query: _cloneDeep(this.$route.query),
         hash: this.$route.hash,
@@ -28,26 +41,20 @@ export default {
     },
   },
   computed: {
+    routeLanguage() {
+      return this.$route.params.language
+    },
     clientLanguage() {
-      return this.$route.params[this.localeKey]
-    },
-    clientLocale() {
-      return helper.getCountryCodeFromLanguageCode(this.clientLanguage)
-    },
-    localeKey() {
-      return this.$store.getters['locale/key']
-    },
-    fallback() {
-      return this.$store.getters['locale/fallback']
+      return this.$store.getters['locale/language']
     },
     languages() {
       return this.$store.getters['locale/languages']
     },
   },
   watch: {
-    clientLanguage() {
-      this.$store.dispatch('locale/setLanguage', this.clientLanguage)
-      this.$store.dispatch('locale/setLocale', this.clientLocale)
-    },
+    routeLanguage() {
+      if(!this.routeLanguage) return
+      this.$store.dispatch('locale/setLanguage', this.routeLanguage)
+    }
   },
 }

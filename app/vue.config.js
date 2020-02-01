@@ -8,7 +8,7 @@ module.exports = {
   ],
   pwa: {
     workboxOptions: {
-      exclude: [/.svg$/, /.map$/]
+      exclude: [/.map$/]
     },
   },
   // github page
