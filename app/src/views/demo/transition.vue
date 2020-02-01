@@ -46,7 +46,7 @@ export default {
   },
   computed: {
     link() {
-      return `<a href="https://vuetifyjs.com/en/components/menus#menus" target="_blank">${this.i18n('see.doc')}</a>`
+      return `<a href="https://vuetifyjs.com/en/components/menus#api" target="_blank">${this.i18n('see.doc')}</a>`
     },
     code() {
       return `

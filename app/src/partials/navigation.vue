@@ -16,6 +16,14 @@
         <v-list-item-title>{{page.title}}</v-list-item-title>
       </v-list-item-content>
     </v-list-item>
+
+    <v-list-item href="https://github.com/ciao-chung/anchor-datetime-picker" target="_blank">
+      <v-list-item-content>
+        <v-list-item-title>
+          GITHUB
+        </v-list-item-title>
+      </v-list-item-content>
+    </v-list-item>
   </v-list>
 </template>
 

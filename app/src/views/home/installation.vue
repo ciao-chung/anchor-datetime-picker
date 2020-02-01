@@ -6,15 +6,17 @@
 
     <v-card-text>
       <div class="mb-4">
-        <prism-editor readonly :code="installCode" language="bash"></prism-editor>
+        <v-code readonly :code="installCode" language="bash"></v-code>
       </div>
 
       <div class="mb-4">
-        <prism-editor readonly :code="importCode" language="js"></prism-editor>
+        <div class="subtitle-1 black--text">script</div>
+        <v-code readonly :code="importCode" language="js"></v-code>
       </div>
 
       <div class="mb-4">
-        <prism-editor readonly :code="templateCode" language="vue"></prism-editor>
+        <div class="subtitle-1 black--text">template</div>
+        <v-code readonly :code="templateCode" language="vue"></v-code>
       </div>
     </v-card-text>
   </v-card>
@@ -34,11 +36,10 @@ export default {
     },
     importCode() {
       return `
-// import
 import datetimePicker from 'anchor-datetime-picker'
 export default {
   data: () => ({
-    data: '2020-01-01 00:00:00',
+    data: null,
   }),
   components: {
     datetimePicker,
