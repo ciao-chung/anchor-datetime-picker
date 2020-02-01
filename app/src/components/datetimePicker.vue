@@ -23,6 +23,8 @@
               v-bind="datePickerProps"
               @input="focusTimePicker"
               :locale="locale"
+              :disabled="disabled"
+              :readonly="readonly"
             ></v-date-picker>
           </v-tab-item>
 
@@ -34,6 +36,7 @@
               v-model="time"
               v-bind="timePickerProps"
               :locale="locale"
+              :disabled="disabled"
             ></v-time-picker>
           </v-tab-item>
         </v-tabs-items>
@@ -77,6 +80,14 @@ export default {
     timePickerProps: {
       type: Object,
       default: () => {},
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    readonly: {
+      type: Boolean,
+      default: false,
     },
   },
   data: () => ({

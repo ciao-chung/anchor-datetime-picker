@@ -19,6 +19,10 @@ export default {
         {
           title: 'datetime',
           component: () => import('views/demo/datetime.vue'),
+          grid: {
+            xl: 12,
+            lg: 12,
+          },
         },
         {
           title: 'date',
@@ -29,12 +33,38 @@ export default {
           component: () => import('views/demo/time.vue'),
         },
         {
+          title: 'Inline',
+          component: () => import('views/demo/inline.vue'),
+          grid: {
+            xl: 12,
+            lg: 12,
+            md: 12,
+          },
+        },
+        {
           title: 'Text field slot',
           component: () => import('views/demo/textFieldSlot.vue'),
         },
         {
           title: 'Tab icon slot',
           component: () => import('views/demo/tabIconSlot.vue'),
+        },
+        {
+          title: 'Disabled',
+          component: () => import('views/demo/disabled.vue'),
+        },
+        {
+          title: 'Readonly',
+          component: () => import('views/demo/readonly.vue'),
+        },
+        {
+          title: 'Transition',
+          component: () => import('views/demo/transition.vue'),
+          grid: {
+            xl: 12,
+            lg: 12,
+            md: 12,
+          },
         },
       ]
     },

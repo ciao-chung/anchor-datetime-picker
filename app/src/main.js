@@ -22,6 +22,8 @@ Vue.config.productionTip = false
 Vue.prototype.PROJECT_CODE = PROJECT_CODE
 Vue.prototype.PROJECT_NAME = PROJECT_NAME
 
+import code from 'partials/code.vue'
+Vue.component('v-code', code)
 window.rootComponent = new Vue({
   mixins: [setupTextAndI18n],
   router,

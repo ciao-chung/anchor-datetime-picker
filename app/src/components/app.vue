@@ -1,6 +1,7 @@
 <template>
   <div anchor-datetime-picker-root>
     <v-menu
+      v-if="!inline"
       :close-on-content-click="false"
       :transition="transition"
       offset-y
@@ -19,7 +20,8 @@
             outlined
             prepend-inner-icon="fa fa-clock"
             readonly
-            :clearable="!disabled"
+            :disabled="disabled"
+            :clearable="textFieldClearable"
           ></v-text-field>
         </slot>
       </template>
@@ -41,6 +43,23 @@
       </datetimePicker>
 
     </v-menu>
+
+    <datetimePicker
+      v-if="inline"
+      v-bind="$props"
+      v-model="data">
+
+      <!--date icon-->
+      <template v-slot:date-icon>
+        <slot name="date-icon"></slot>
+      </template>
+
+      <!--time icon-->
+      <template v-slot:time-icon>
+        <slot name="time-icon"></slot>
+      </template>
+
+    </datetimePicker>
   </div>
 </template>
 
@@ -50,6 +69,10 @@ export default {
     width: {
       type: [String, Number],
       default: '330px',
+    },
+    inline: {
+      type: Boolean,
+      default: false,
     },
     value: {
       type: String,
@@ -83,6 +106,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    readonly: {
+      type: Boolean,
+      default: false,
+    },
     transition: {
       type: String,
       default: 'scroll-y-transition',
@@ -93,6 +120,13 @@ export default {
   }),
   created() {
     this.data = this.value
+  },
+  computed: {
+    textFieldClearable() {
+      if(this.disabled) return false
+      if(this.readonly) return false
+      return true
+    },
   },
   watch: {
     value() {

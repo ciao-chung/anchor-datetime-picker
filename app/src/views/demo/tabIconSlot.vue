@@ -13,6 +13,8 @@
         Time
       </template>
     </v-datetime-picker>
+
+    <v-code :code="code" lang="vue"></v-code>
   </div>
 </template>
 
@@ -23,6 +25,23 @@ export default {
   data: () => ({
     value: null,
   }),
+  computed: {
+    code() {
+      return `
+<v-datetime-picker
+  type="datetime"
+  v-model="value">
+  <template v-slot:date-icon>
+    Date
+  </template>
+
+  <template v-slot:time-icon>
+    Time
+  </template>
+</v-datetime-picker>
+`
+    },
+  },
 }
 </script>
 

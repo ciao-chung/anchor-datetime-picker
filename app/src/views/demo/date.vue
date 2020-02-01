@@ -2,6 +2,8 @@
   <div>
     <div class="subtitle-1 mb-2">data: {{value}}</div>
     <v-datetime-picker type="date" v-model="value"></v-datetime-picker>
+
+    <v-code :code="code" lang="vue"></v-code>
   </div>
 </template>
 
@@ -14,6 +16,13 @@ export default {
   }),
   created() {
     this.value = this.$moment().format('YYYY-MM-DD')
+  },
+  computed: {
+    code() {
+      return `
+<v-datetime-picker type="date" v-model="value"></v-datetime-picker>
+`
+    },
   },
 }
 </script>

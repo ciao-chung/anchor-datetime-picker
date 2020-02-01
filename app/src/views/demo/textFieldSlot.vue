@@ -8,6 +8,8 @@
         </div>
       </template>
     </v-datetime-picker>
+
+    <v-code :code="code" lang="vue"></v-code>
   </div>
 </template>
 
@@ -20,6 +22,19 @@ export default {
   }),
   created() {
     this.value = this.$moment().format('YYYY-MM-DD HH:mm:ss')
+  },
+  computed: {
+    code() {
+      return `
+<v-datetime-picker v-model="value">
+  <template v-slot:text-field="{ data }">
+    <div class="my-2 primary--text">
+      this is text field slot, data: {{data}}
+    </div>
+  </template>
+</v-datetime-picker>
+`
+    },
   },
 }
 </script>
